@@ -1,0 +1,23 @@
+---
+const { title, date, summary } = Astro.props;
+---
+
+<html lang="id">
+  <head>
+    <title>{title}</title>
+    <meta name="description" content={summary} />
+  </head>
+  <body>
+    <article>
+      <h1>{title}</h1>
+      <p>
+        <small>
+          Dipublikasikan: {date.toLocaleDateString("id-ID")}
+        </small>
+      </p>
+
+      <!-- slot = isi markdown akan masuk ke sini -->
+      <slot />
+    </article>
+  </body>
+</html>
