@@ -15,14 +15,16 @@ const posts = await getCollection("blog");
   <body>
     <h1>list Blog</h1>
     <ul>
-      {posts.map((post) => (
+      {
+        posts.map((post) => (
           <li>
-            <a href={`/blog/${post.slug}`}>
+            <a href={`/${post.slug}`}>
               <h3>{post.data.title}</h3>
             </a>
             <p>{post.data.summary}</p> <br />
           </li>
-        ))}
+        ))
+      }
     </ul>
   </body>
 </html>

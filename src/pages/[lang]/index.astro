@@ -1,0 +1,42 @@
+---
+import { getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+  // Bahasa yang kita dukung
+  const langs = ["id", "en"];
+
+  return langs.map((lang) => ({
+    params: { lang },
+  }));
+}
+
+const { lang } = Astro.params;
+
+// Ambil post berdasarkan folder lang
+const posts = await getCollection("blog", ({ id }) => {
+  return id.startsWith(`${lang}/`);
+});
+---
+
+<h1>Blog ({lang.toUpperCase()})</h1>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul>
+      {
+        posts.map((post) => (
+          <li>
+            <a href={`/${post.slug}`}>{post.data.title}</a>
+            <p>{post.data.summary}</p>
+          </li>
+        ))
+      }
+    </ul>
+  </body>
+</html>

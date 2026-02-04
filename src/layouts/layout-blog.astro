@@ -1,23 +1,33 @@
 ---
-const { title, date, summary } = Astro.props;
+import "../styles/global.css";
+const { data } = Astro.props;
 ---
 
-<html lang="id">
+<!doctype html>
+<html lang={data.lang}>
   <head>
-    <title>{title}</title>
-    <meta name="description" content={summary} />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="description" content={data.summary} />
+    <title>{data.title}</title>
   </head>
-  <body>
-    <article>
-      <h1>{title}</h1>
-      <p>
-        <small>
-          Dipublikasikan: {date.toLocaleDateString("id-ID")}
-        </small>
-      </p>
-
-      <!-- slot = isi markdown akan masuk ke sini -->
-      <slot />
-    </article>
+  <body class="bg-slate-50">
+    <main class="container p-7">
+      <time class="text-slate-500">
+        {
+          data.date.toLocaleString(data.lang, {
+            year: "numeric",
+            month: "long",
+            weekday: "long",
+            day: "numeric",
+          })
+        }
+      </time>
+      <h1 class="text-4xl my-3 font-semibold">{data.title}</h1>
+      <article class="prose pt-2">
+        <slot />
+      </article>
+    </main>
   </body>
 </html>

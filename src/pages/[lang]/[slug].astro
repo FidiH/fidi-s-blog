@@ -1,0 +1,30 @@
+---
+import { getCollection } from "astro:content";
+import LayoutBlog from "../../layouts/layout-blog.astro";
+
+export async function getStaticPaths() {
+  const langs = ["id", "en"];
+  const posts = await getCollection("blog");
+
+  return posts
+    .filter((post) => langs.some((lang) => post.id.startsWith(`${lang}/`)))
+    .map((post) => {
+      // contoh post.id: "id/post-pertama.md"
+      const [lang, filename] = post.id.split("/");
+      const slug = filename.replace(".md", "");
+
+      return {
+        params: {
+          lang,
+          slug,
+        },
+        props: post,
+      };
+    });
+}
+
+const { data, render } = Astro.props;
+const { Content } = await render();
+---
+
+<LayoutBlog data={data}> <Content /></LayoutBlog>
