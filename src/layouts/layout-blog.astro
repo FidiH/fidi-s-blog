@@ -1,6 +1,8 @@
 ---
 import "../styles/global.css";
+import Header from "./components/Header.astro"
 const { data } = Astro.props;
+
 ---
 
 <!doctype html>
@@ -13,7 +15,13 @@ const { data } = Astro.props;
     <title>{data.title}</title>
   </head>
   <body class="bg-slate-50">
+    <!-- Header-->
+    <Header></Header>
+    <!--main content-->
     <main class="container p-7">
+      <!--judul-->
+      <h1 class="text-4xl my-3 font-semibold">{data.title}</h1>
+      <!--date publis-->
       <time class="text-slate-500">
         {
           data.date.toLocaleString(data.lang, {
@@ -23,8 +31,10 @@ const { data } = Astro.props;
             day: "numeric",
           })
         }
-      </time>
-      <h1 class="text-4xl my-3 font-semibold">{data.title}</h1>
+      </time> 
+      <!--visual banner-->
+      <img class="rounded-lg shadow-lg my-5" src={'/'+data?.banner} alt="">
+      <!--blog yang ditampilkan-->
       <article class="prose pt-2">
         <slot />
       </article>
