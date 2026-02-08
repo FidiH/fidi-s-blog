@@ -1,9 +1,25 @@
-<header class="px-7 py-5 flex justify-between sticky top-0 bg-slate-100">
-  <h2 class="font-semibold">Fidi's</h2>
+---
+let styleLink = "block"
+---
 
-  <nav>
-    <a href="/blog">Home</a>
-    <a href="/en">Blog en</a>
-    <a href="/id">Blog id</a>
+<header class="px-7 py-3 flex justify-between items-center sticky top-0 bg-slate-100">
+  <h2 class="font-semibold z-50">Fidi's</h2>
+  
+  <button type="button" class="text-2xl font-semibold transition-all rounded px-2 block" id="btnMenu">=</button>
+  
+  <nav class="fixed right-0 top-14 bg-slate-100 px-4 py-3 transition-all rounded-bl-3xl translate-x-full" id="navLink">
+    <a class={styleLink} href="/blog">Home</a>
+    <a class={styleLink} href="/en">Blog en</a>
+    <a class={styleLink} href="/id">Blog id</a>
   </nav>
 </header>
+
+<script>
+  btnMenu.addEventListener("click", () =>{
+    
+    navLink.classList.toggle("translate-x-full")
+    btnMenu.classList.toggle("bg-red-300")
+    btnMenu.classList.toggle("rotate-90")
+    
+  })
+</script>

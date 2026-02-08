@@ -1,4 +1,5 @@
 ---
+import Header from "./components/Header.astro";
 import "../styles/global.css";
 ---
 
@@ -11,7 +12,8 @@ import "../styles/global.css";
     <title></title>
   </head>
   <body>
-    <main class="p-7">
+    <Header />
+    <main class="pt-14 px-7">
       <slot />
     </main>
   </body>
