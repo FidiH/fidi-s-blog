@@ -10,6 +10,7 @@
     "format": "exec prettier . --write"
   },
   "dependencies": {
+    "@astrojs/image": "^0.18.0",
     "@tailwindcss/vite": "^4.1.18",
     "astro": "^5.17.1",
     "tailwindcss": "^4.1.18"
