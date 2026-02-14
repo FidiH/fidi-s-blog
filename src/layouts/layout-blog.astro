@@ -32,7 +32,11 @@ const { data } = Astro.props;
         }
       </time>
       <!--visual banner-->
-      <img class="rounded-lg shadow-lg my-5" src={"/assets/" + data?.banner} alt="" />
+      <img
+        class="rounded-lg shadow-lg my-5"
+        src={"/assets/" + data?.banner}
+        alt=""
+      />
       <!--blog yang ditampilkan-->
       <article class="prose pt-2">
         <slot />

@@ -18,7 +18,7 @@ const posts = await getCollection("blog");
       {
         posts.map((post) => (
           <li>
-            <img src={"/assets/"+post.data?.banner} width="200px" alt="">
+            <img src={"/assets/" + post.data?.banner} width="200px" alt="" />
             <a href={`/${post.slug}`}>
               <h3>{post.data.title}</h3>
             </a>

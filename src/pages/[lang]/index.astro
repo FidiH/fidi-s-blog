@@ -30,7 +30,8 @@ const posts = await getCollection("blog", ({ id }) => {
           <a href={"/"+post.slug}>
             <div class="relative">
               {post.data.banner ? (
-                              <time class="absolute bg-slate-50 rounded p-1 px-2 opacity-80 font-semibold top-2 right-2 text-[.5rem]">
+                   <>
+                                <time class="absolute bg-slate-50 rounded p-1 px-2 opacity-80 font-semibold top-2 right-2 text-[.5rem]">
                 {post.data.date.toLocaleString(lang, {
                   year: "numeric",
                   month: "numeric",
@@ -43,6 +44,7 @@ const posts = await getCollection("blog", ({ id }) => {
                   src={"/assets/" + post.data.banner}
                   alt=""
                 />
+                   </>
               ) : (
                   <time class="absolute bg-slate-50 rounded p-1 px-2 opacity-80 font-semibold -top-6 right-2 text-[.5rem]">
                 {post.data.date.toLocaleString(lang, {
