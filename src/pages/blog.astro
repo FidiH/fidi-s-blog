@@ -1,4 +1,8 @@
 ---
+// import css tailwind
+import "../styles/global.css"
+// import component header
+import Header from "../layouts/components/Header.astro"
 import { getCollection } from "astro:content";
 
 const posts = await getCollection("blog");
@@ -13,19 +17,26 @@ const posts = await getCollection("blog");
     <title>list semua blog</title>
   </head>
   <body>
-    <h1>list Blog</h1>
-    <ul>
+    <Header></Header>
+    <main class="p-7">
+    <h1 class="font-semibold text-2xl">list Blog</h1>
+    <ul class="mt-10">
       {
         posts.map((post) => (
-          <li>
-            <img src={"/assets/" + post.data?.banner} width="200px" alt="" />
+          <li class="my-3">
             <a href={`/${post.slug}`}>
-              <h3>{post.data.title}</h3>
+              
+              {post.data.banner ? (
+                <img class="mb-4 rounded-xl aspect-[5/2] w-full object-cover" src={"/assets/" + post.data?.banner} width="200px" alt="" />
+              ) : ""}
+              
+              <h3 class="font-semibold text-lg">{post.data.title}</h3>
+              <p>{post.data.summary}</p> <br />
             </a>
-            <p>{post.data.summary}</p> <br />
           </li>
         ))
       }
     </ul>
+    </main>
   </body>
 </html>
