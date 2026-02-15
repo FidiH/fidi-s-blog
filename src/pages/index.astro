@@ -1,24 +1,25 @@
----
-import "../styles/global.css";
----
 
-<html lang="id">
-  <head>
-    <meta charset="utf-8" />
-    <!--<link rel="icon" type="image/svg+xml" href="/favicon.svg" />-->
-    <!--<link rel="icon" href="/favicon.ico" />-->
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
-  </head>
-  <body>
-    <section class="p-7">
-      <div
-        class="box text-sky-800 bg-sky-200 ring-2 p-5 ring-sky-400 rounded-xl"
-      >
-        <h1 class="font-semibold text-xl">Informasi</h1>
-        <p class="text-sm">ini setup project pertama</p>
-      </div>
+---
+import "../styles/global.css"
+import Header from "../layouts/components/Header.astro"
+// src/pages/index.astro
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Fidi</title>
+</head>
+<body>
+  <Header></Header>
+  <main>
+    <section class="text-center p-7 py-16">
+      <h2 class="text-3xl font-semibold">Blog pribadi Fidi's</h2>
+      <p>blog disini berdasarkan sudut pandang penulis, wajar sekali jika ada ketidak sesuaian dengan pembaca</p>
+      <a class="block py-2 px-5 rounded-lg bg-slate-200 shadow m-auto mt-10 w-fit" href="/blog">Liat Blog</a>
     </section>
-  </body>
+  </main>
+</body>
 </html>
