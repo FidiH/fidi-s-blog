@@ -1,32 +1,34 @@
 ---
-import {Image} from "astro:assets"
-import profil from "../../assets/profil.jpg"
-import IG from "../../assets/Ig.astro"
+import { Image } from "astro:assets";
+import profil from "../../assets/profil.jpg";
+import IG from "../../assets/Ig.astro";
 ---
 
-<section class="p-7 bg-slate-50 rounded-xl ">
+<section class="p-7 bg-slate-50 rounded-xl">
 
-  <div class="flex items-center">
-    <div>
-    <Image class="w-11 block rounded-full" src={profil} width="100" alt="profil">
+    <div class="flex">
+      <Image
+        class="w-11 block rounded-full"
+        src={profil}
+        width="100"
+        alt="profil"
+      />
+      <div class="ml-2 leading-0">
+        <h3 class="font-semibold text-lg">Fidi H</h3>
+        <p class="text-sm font-light text-slate-500 -mt-2">Pelajar</p>
+      </div>
     </div>
-    <div class="ml-2 leading-0">
-      <h3 class="font-semibold text-lg">Fidi H</h3>
-      <p class="text-sm font-light text-slate-500 -mt-2">
-       Pelajar
-      </p>
+
+    <p class="text-sm mt-2">
+      tione impedit, vel tempore autem. Ab eveniet ut aperiam, laudantium
+      commodi. Autem error qui, nobis praesentium laboriosam.
+      <a href="/tentang" class="underline italic">detail</a>
+    </p>
+
+    <div class="sosmed mt-5">
+      <a href="https://instagram.com/fidfulcin">
+        <IG />
+      </a>
     </div>
   </div>
-
-  <p class="text-sm mt-2">
-    tione impedit, vel tempore autem. Ab eveniet ut aperiam, laudantium commodi. Autem error qui, nobis praesentium laboriosam.
-    <a href="/tentang" class="underline italic">detail</a>
-  </p>
-
-  <div class="sosmed mt-5">
-    <a href="https://instagram.com/fidfulcin">
-      <IG></IG>
-    </a>
-  </div>
-
 </section>

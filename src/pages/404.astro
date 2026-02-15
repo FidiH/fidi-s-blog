@@ -1,37 +1,44 @@
 ---
-import LayoutList from "../layouts/layout-list.astro"
+import LayoutList from "../layouts/layout-list.astro";
 
-import {getCollection} from "astro:content"
-let posts = await getCollection("blog")
+import { getCollection } from "astro:content";
+let posts = await getCollection("blog");
 
 let data = {
   title: "404",
-}
-
+};
 ---
+
 <LayoutList data={data}>
   <section class="text-center py-16">
-  <h1 class="font-semibold">404 | not found</h1>
-  <p>Halaman ini tidak ditemukan</p>
+    <h1 class="font-semibold">404 | not found</h1>
+    <p>Halaman ini tidak ditemukan</p>
   </section>
 
   <section class="mt-10">
     <h3 class="font-semibold text-2xl">Lainnya</h3>
     <ul class="mt-10">
       {
-        posts.map((post) => (
-          <li class="my-3">
-            <a href={`/${post.slug}`}>
-              
-              {post.data.banner ? (
-                <img class="mb-4 rounded-xl aspect-[5/2] w-full object-cover" src={"/assets/" + post.data?.banner} width="200px" alt="" />
-              ) : ""}
-              
-              <h3 class="font-semibold text-lg">{post.data.title}</h3>
-              <p>{post.data.summary}</p> <br />
-            </a>
-          </li>
-        )).slice(-3)
+        posts
+          .map((post) => (
+            <li class="my-3">
+              <a href={`/${post.slug}`}>
+                {post.data.banner ? (
+                  <img
+                    class="mb-4 rounded-xl aspect-[5/2] w-full object-cover"
+                    src={"/assets/" + post.data?.banner}
+                    width="200px"
+                    alt=""
+                  />
+                ) : (
+                  ""
+                )}
+                <h3 class="font-semibold text-lg">{post.data.title}</h3>
+                <p>{post.data.summary}</p> <br />
+              </a>
+            </li>
+          ))
+          .slice(-3)
       }
     </ul>
   </section>

@@ -1,35 +1,36 @@
 ---
-import LayoutList from "../layouts/layout-list.astro"
-import {Image} from "astro:assets"
-import profil from "../assets/profil.jpg"
-import IG from "../assets/Ig.astro"
+import LayoutList from "../layouts/layout-list.astro";
+import { Image } from "astro:assets";
+import profil from "../assets/profil.jpg";
+import IG from "../assets/Ig.astro";
 ---
 
 <LayoutList data={}>
-<section class="p-7 my-10 bg-slate-50 rounded-xl ">
+  <section class="p-7 my-10 bg-slate-50 rounded-xl">
+      <div class="flex">
+        <Image
+          class="w-11 rounded-full"
+          src={profil}
+          width="100"
+          alt="profil"
+        />
+        <div class="ml-2 leading-0">
+          <h3 class="font-semibold text-lg">Fidi H</h3>
+          <p class="text-sm font-light text-slate-500 -mt-2">Pelajar</p>
+        </div>
+      </div>
 
-  <div class="flex items-center">
-    <div>
-      
-    <Image class="w-11 rounded-full" src={profil} width="100" alt="profil">
-    </div>
-    <div class="ml-2 leading-0">
-      <h3 class="font-semibold text-lg">Fidi H</h3>
-      <p class="text-sm font-light text-slate-500 -mt-2">
-       Pelajar
+      <p class="text-sm mt-2">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, aperiam
+        dolor distinctio, magni nesciunt vitae repellat reprehenderit dolores
+        numquam voluptas a dolorum tenetur voluptatibus eaque.
       </p>
+
+      <div class="sosmed mt-5">
+        <a href="https://instagram.com/fidfulcin">
+          <IG />
+        </a>
+      </div>
     </div>
-  </div>
-
-  <p class="text-sm mt-2">
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, aperiam dolor distinctio, magni nesciunt vitae repellat reprehenderit dolores numquam voluptas a dolorum tenetur voluptatibus eaque.
-  </p>
-
-  <div class="sosmed mt-5">
-    <a href="https://instagram.com/fidfulcin">
-      <IG></IG>
-    </a>
-  </div>
-
-</section>
-</LayoutList>
+  </section></LayoutList
+>

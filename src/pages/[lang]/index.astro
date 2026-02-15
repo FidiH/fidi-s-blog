@@ -27,33 +27,33 @@ const posts = await getCollection("blog", ({ id }) => {
     {
       posts.map((post) => (
         <li class="box p-3 bg-slate-100 rounded-lg mb-8">
-          <a href={"/"+post.slug}>
+          <a href={"/" + post.slug}>
             <div class="relative">
               {post.data.banner ? (
-                   <>
-                                <time class="absolute bg-slate-50 rounded p-1 px-2 opacity-80 font-semibold top-2 right-2 text-[.5rem]">
-                {post.data.date.toLocaleString(lang, {
-                  year: "numeric",
-                  month: "numeric",
-                  weekday: "long",
-                  day: "numeric",
-                })}
-              </time>
-                <img
-                  class="w-full aspect-[10/4] shadow-lg mb-2 object-cover rounded-md"
-                  src={"/assets/" + post.data.banner}
-                  alt=""
-                />
-                   </>
+                <>
+                  <time class="absolute bg-slate-50 rounded p-1 px-2 opacity-80 font-semibold top-2 right-2 text-[.5rem]">
+                    {post.data.date.toLocaleString(lang, {
+                      year: "numeric",
+                      month: "numeric",
+                      weekday: "long",
+                      day: "numeric",
+                    })}
+                  </time>
+                  <img
+                    class="w-full aspect-[10/4] shadow-lg mb-2 object-cover rounded-md"
+                    src={"/assets/" + post.data.banner}
+                    alt=""
+                  />
+                </>
               ) : (
-                  <time class="absolute bg-slate-50 rounded p-1 px-2 opacity-80 font-semibold -top-6 right-2 text-[.5rem]">
-                {post.data.date.toLocaleString(lang, {
-                  year: "numeric",
-                  month: "numeric",
-                  weekday: "long",
-                  day: "numeric",
-                })}
-              </time>
+                <time class="absolute bg-slate-50 rounded p-1 px-2 opacity-80 font-semibold -top-6 right-2 text-[.5rem]">
+                  {post.data.date.toLocaleString(lang, {
+                    year: "numeric",
+                    month: "numeric",
+                    weekday: "long",
+                    day: "numeric",
+                  })}
+                </time>
               )}
             </div>
 
