@@ -21,7 +21,7 @@ const { data } = Astro.props;
     <!--main content-->
     <main class="container p-7">
       <!--judul-->
-      <h1 class="text-4xl my-3 font-semibold">{data.title}</h1>
+      <h1 class="text-4xl my-3 font-bold">{data.title}</h1>
       <!--date publis-->
       <time class="text-slate-500">
         {
@@ -34,11 +34,17 @@ const { data } = Astro.props;
         }
       </time>
       <!--visual banner-->
+      {data.banner ? (
       <img
         class="rounded-lg shadow-lg my-5"
         src={"/assets/" + data?.banner}
         alt=""
       />
+      ) : (
+      <br>
+      <br>
+      )}
+      
       <!--blog yang ditampilkan-->
       <article class="prose pt-2">
         <slot />
