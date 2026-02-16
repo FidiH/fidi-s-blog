@@ -1,10 +1,10 @@
 ---
-title: "file markdown testing dengan sederhana"
-date: 2026-02-07
+title: "Membangun Fondasi Pemrograman Web dari Awal"
+date: 2026-02-16
 summary: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem repudiandae delectus ratione, laboriosam, eveniet doloremque!"
 lang: "id"
 category: "testing"
-tags: ["blog", "test"]
+tags: ["web", "belajar"]
 banner: ""
 ---
 
