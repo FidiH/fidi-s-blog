@@ -5,7 +5,7 @@ summary: "Mengenal pondasi dasar teknologi web seperti HTML, CSS, dan JAVASCRIPT
 lang: "id"
 category: "web-development"
 tags: ["web", "belajar"]
-banner: ""
+banner: "fondasi-web.jpeg"
 ---
 
 Pasti sudah tidak asing lagi dengan halaman antarmuka seperti Google, Medium, Wikipedia, dan lain sebagainya.
